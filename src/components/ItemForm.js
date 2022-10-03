@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useRef} from "react";
 
 function ItemForm(props) {
-    const [input, setInput] = useState('');
+    const [input, setInput] = useState(props.edit ? props.edit.value : '');
 
     const focus = useRef(null);
 
@@ -27,16 +27,33 @@ function ItemForm(props) {
     return (
         <div>
             <form className="item-form" onSubmit={handleSubmit}>
-                <input
+                {props.edit ? (
+                    <>
+                    <input
+                        type="text"
+                        placeholder="Edit item" 
+                        value={input}
+                        name="text"
+                        className="item-input edit"
+                        onChange={handleChange}
+                        ref={focus}
+                    />
+                    <button className="item-button edit">edit</button>
+                    </>
+                ) : (
+                    <>
+                    <input
                     type="text"
-                    placeholder="Add an Item" 
+                    placeholder="Add item" 
                     value={input}
                     name="text"
-                    className="item-input"
+                    className="item-input add"
                     onChange={handleChange}
                     ref={focus}
-                />
-                <button className="item-button">Add Item</button>
+                    />
+                    <button className="item-button add">+</button>
+                    </>
+                )}
             </form>
         </div>
     )
