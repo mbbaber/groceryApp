@@ -3,12 +3,12 @@ import React, {useState} from "react";
 function ItemForm(props) {
     const [input, setInput] = useState('');
 
-    const handleSubmit = e => { //prevents refresh of page upon click
-        e.preventDefault();
+    const handleSubmit = e => { 
+        e.preventDefault(); //prevents refresh of page upon click
 
         props.onSubmit({
             id: Math.floor(Math.random() * 10000),
-            text: input,
+            text: input
         })
 
         setInput('');
@@ -16,7 +16,7 @@ function ItemForm(props) {
 
     const handleChange = e => { // now we can type stuff into input
         setInput(e.target.value)
-    }
+    };
 
     return (
         <div>
