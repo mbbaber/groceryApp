@@ -43,7 +43,6 @@ function ItemList() {
 
     return (
         <div>
-            <h1>What do you need?</h1>
             <ItemForm onSubmit={addItem}/>
             <Item 
                 items={items}

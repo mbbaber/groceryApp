@@ -1,10 +1,11 @@
 import './App.css';
-import ItemList from './components/ItemList';
+import Tabs from './components/Tabs'
 
 function App() {
   return (
     <div>
-      <ItemList/>
+      <h1>Grocery App</h1>
+      <Tabs/>
     </div>
   );
 }
