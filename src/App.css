@@ -44,6 +44,7 @@ h1 {
 }
 
 .item-form {
+display: flex; /* equal height of the children */
   margin-bottom: 32px;
 }
 
@@ -62,7 +63,7 @@ h1 {
 }
 
 .item-button {
-  padding: 16px;
+  padding: 16px 22px;
   border: none;
   border-radius: 0 4px 4px 0;
   cursor: pointer;
@@ -129,4 +130,9 @@ h1 {
 
 .edit-icon {
   color: var(--white);
+}
+
+.add-icon {
+    font-size: 24px;
+    color: var(--white);
 }

@@ -1,4 +1,5 @@
 import React, {useState, useEffect, useRef} from "react";
+import {RiAddCircleLine} from 'react-icons/ri';
 
 function ItemForm(props) {
     const [input, setInput] = useState(props.edit ? props.edit.value : '');
@@ -51,7 +52,11 @@ function ItemForm(props) {
                     onChange={handleChange}
                     ref={focus}
                     />
-                    <button className="item-button add">+</button>
+                    <button className="item-button">
+                        <RiAddCircleLine
+                            className="add-icon"
+                        />
+                    </button>
                     </>
                 )}
             </form>
