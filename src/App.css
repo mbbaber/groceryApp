@@ -143,6 +143,10 @@ display: flex; /* equal height of the children */
   width: 90%;
 }
 
+.item-text {
+    width: 95%;
+}
+
 .icons {
   display: flex;
   align-items: center;
@@ -152,11 +156,11 @@ display: flex; /* equal height of the children */
 
 .delete-icon {
   margin-right: 5px;
-  color: var(--white);
+  color: var(--red);
 }
 
 .edit-icon {
-  color: var(--white);
+  color: var(--red);
 }
 
 .add-icon {

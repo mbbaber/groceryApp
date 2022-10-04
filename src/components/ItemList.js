@@ -21,8 +21,6 @@ function ItemList() {
         }
 
         setItems(prev => prev.map(item => (item.id === id ? newValue : item)))
-
-
     }
 
     const removeItem = id => {

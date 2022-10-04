@@ -25,12 +25,15 @@ function Item({items, completeItem, editItem, removeItem}) {
     }
 
     return items.map((item, index) =>  (
-        <div 
-            className={item.isComplete ? 'item-row complete' : 'item-row'}
-            key={index}
+        <div className="item-container">
+            <div 
+                className={item.isComplete ? 'item-row complete' : 'item-row'}
+                key={item.id}
+                onClick={() => completeItem(item.id)}
         >
-            <div key={item.id} onClick={() => completeItem(item.id)}>
-                {item.text}
+                <div className='item-text'>
+                    {item.text}
+                </div>
             </div>
             <div className="icons">
                 <RiCloseCircleLine
@@ -43,6 +46,7 @@ function Item({items, completeItem, editItem, removeItem}) {
                 />
             </div>
         </div>
+        
     ))
 }
 
