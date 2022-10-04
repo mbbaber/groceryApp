@@ -1,1 +1,132 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+}
+:root {
+    --dark-navy: #00202e;
+    --light-navy: #2c4875;
+    --pastel-navy: #cadbf6;
+    --white: white;
+    --red: #ff595e;
+    --yellow: #ffca3a;
+    --green: #8ac926;
+    --blue: #1982c4;
+    --purple: #6a4c93;
+}
 
+body {
+  background: var(--white);
+}
+.item-app {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  width: 520px;
+  min-height: 600px;
+  text-align: center;
+  margin: 128px auto;
+  border-radius: 10px;
+  padding-bottom: 32px;
+}
+
+h1 {
+  margin: 32px 0;
+  color: var(--dark-navy);
+  font-size: 24px;
+}
+
+.complete {
+  text-decoration: line-through;
+  opacity: 0.4;
+}
+
+.item-form {
+  margin-bottom: 32px;
+}
+
+.item-input {
+  padding: 14px 32px 14px 16px;
+  border-radius: 4px 0 0 4px;
+  border: 2px solid var(--dark-navy);
+  outline: none;
+  width: 320px;
+  background: transparent;
+  color: var(--dark-navy);
+}
+
+.item-input::placeholder {
+  color: var(--dark-navy);
+}
+
+.item-button {
+  padding: 16px;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  outline: none;
+  background-color: var(--dark-navy);
+  /* background: linear-gradient(
+    90deg,
+    rgba(93, 12, 255, 1) 0%,
+    rgba(155, 0, 250, 1) 100%
+  ); */
+  color: var(--white);
+  text-transform: capitalize;
+}
+
+.item-input.edit {
+  border: 2px solid var(--light-navy);
+}
+
+.item-button.edit {
+    background-color: var(--light-navy);
+  /* background: linear-gradient(
+    90deg,
+    rgba(20, 159, 255, 1) 0%,
+    rgba(17, 122, 255, 1) 100%
+  ); */
+  padding: 16px 22px;
+}
+
+.item-container {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4px auto;
+  color: var(--white);
+  background-color: var(--red);
+  /* background: linear-gradient(
+    90deg,
+    rgba(255, 118, 20, 1) 0%,
+    rgba(255, 84, 17, 1) 100%
+  ); */
+
+  padding: 16px;
+  border-radius: 5px;
+  width: 90%;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.delete-icon {
+  margin-right: 5px;
+  color: var(--white);
+}
+
+.edit-icon {
+  color: var(--white);
+}
