@@ -2,7 +2,15 @@ import React, {useState, useEffect, useRef} from "react";
 import {RiAddCircleLine} from 'react-icons/ri';
 
 function ItemForm(props) {
-    const [input, setInput] = useState(props.edit ? props.edit.value : '');
+    const [input, setInput] = useState(props.edit ? {
+            text: props.edit.value,
+            number: props.edit.value
+        } : 
+        {
+            text: '',
+            number: null
+        }
+    );
 
     const focus = useRef(null);
 
@@ -15,14 +23,17 @@ function ItemForm(props) {
 
         props.onSubmit({
             id: Math.floor(Math.random() * 10000),
-            text: input
+            text: input.text,
+            number: input.number
         })
 
         setInput('');
     };
 
     const handleChange = e => { // now we can type stuff into input
-        setInput(e.target.value)
+        const value = e.target.value;
+        setInput({...input,
+            [e.target.name]: value})
     };
 
     return (
@@ -33,24 +44,40 @@ function ItemForm(props) {
                     <input
                         type="text"
                         placeholder="Edit item" 
-                        value={input}
+                        value={input.text}
                         name="text"
                         className="item-input edit"
                         onChange={handleChange}
                         ref={focus}
+                    />
+                        <input
+                        type="number"
+                        placeholder="Qty"
+                        value={input.number}
+                        name="number"
+                        className="item-input add"
+                        onChange={handleChange}
                     />
                     <button className="item-button edit">edit</button>
                     </>
                 ) : (
                     <>
                     <input
-                    type="text"
-                    placeholder="Add item" 
-                    value={input}
-                    name="text"
-                    className="item-input add"
-                    onChange={handleChange}
-                    ref={focus}
+                        type="text"
+                        placeholder="Add item" 
+                        value={input.text}
+                        name="text"
+                        className="item-input add"
+                        onChange={handleChange}
+                        ref={focus}
+                    />
+                    <input
+                        type="number"
+                        placeholder="Qty"
+                        value={input.number}
+                        name="number"
+                        className="item-input add"
+                        onChange={handleChange}
                     />
                     <button className="item-button">
                         <RiAddCircleLine

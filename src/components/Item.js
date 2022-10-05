@@ -35,6 +35,7 @@ function Item({items, completeItem, editItem, removeItem}) {
                     {item.text}
                 </div>
             </div>
+            <div>{item.number}</div>
             <div className="icons">
                 <RiCloseCircleLine
                     onClick={() => removeItem(item.id)}
